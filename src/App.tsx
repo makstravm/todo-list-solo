@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { v1 } from 'uuid';
+import { stringify, v1 } from 'uuid';
 import './App.css';
 import { TodoList } from './TodoLIst';
 
@@ -35,6 +35,17 @@ function App() {
       return task
     }
   }
+
+  function addTask(title: string) {
+    const newTask = {
+      id: v1(),
+      title,
+      isDone: false
+    }
+    const newAddTask = [newTask, ...task]
+    setTask(newAddTask)
+  }
+
   return (
     <div className="App">
       <TodoList
@@ -42,6 +53,7 @@ function App() {
         tasks={filterTasks()}
         removeTask={removeTask}
         changeTodList={changeTodList}
+        addTask={addTask}
       />
     </div>
   );
