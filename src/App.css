@@ -1,6 +1,8 @@
 .App {
   padding: 30px;
-  display: flex;
+  display: flex;background-color: #ececec;
+  min-height: 100vh;
+  color: #000;
 }
 
 .App > div {
@@ -10,3 +12,4 @@ button{
   margin-left: 15px;
   cursor: pointer;
 }
+

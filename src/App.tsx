@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { stringify, v1 } from 'uuid';
+import { v1 } from 'uuid';
 import './App.css';
-import { TodoList } from './TodoLIst';
+import { TaskType, TodoList } from './TodoLIst';
 
 export type FilterType = 'all' | 'active' | 'completed'
 
 function App() {
-  const [task, setTask] = useState([
+  const [task, setTask] = useState<Array<TaskType>>([
     { id: v1(), title: 'Cabinet', isDone: true },
     { id: v1(), title: 'Golden Ale', isDone: false },
     { id: v1(), title: 'Silver Ale', isDone: false },
@@ -46,6 +46,14 @@ function App() {
     setTask(newAddTask)
   }
 
+  function checkStatus(taskId: string, isDone: boolean) {
+    let secondVari = task.find(t => t.id === taskId)
+    if(secondVari){
+      secondVari.isDone =isDone
+      setTask([...task])
+    }
+  }
+
   return (
     <div className="App">
       <TodoList
@@ -54,6 +62,8 @@ function App() {
         removeTask={removeTask}
         changeTodList={changeTodList}
         addTask={addTask}
+        checkPropsStatus={checkStatus}
+        filter = {filter}
       />
     </div>
   );
