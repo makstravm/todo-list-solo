@@ -1,0 +1,104 @@
+.input {
+  border: none;
+  box-shadow: 0px 0px 5px 0px rgb(0, 0, 0);
+  padding: 10px 25px;
+  font-size: 20px;
+  line-height: 30px;
+  max-width: 175px;
+  margin-bottom: 5px;
+}
+.input.error {
+  box-shadow: 0px 0px 5px 0px rgb(255, 0, 0);
+}
+.delete {
+  padding: 5px 15px;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 25px;
+  transition: all 0.3s;
+}
+.delete:hover {
+  color: rgb(255, 81, 0);
+  text-shadow: 0px 0px 10px rgb(255, 81, 0);
+}
+.btn {
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 30px;
+  background-color: #757575;
+  transition: all 0.3s;
+}
+.btn:hover {
+  background-color: #b48f8f;
+}
+.btn:active {
+  box-shadow: 0px 0px 5px 0px rgb(0, 0, 0) inset;
+}
+.errorText {
+  font-size: 14px;
+  color: red;
+}
+.title {
+  padding: 5px 15px;
+  font-size: 20px;
+  line-height: 32px;
+}
+.listTask {
+  list-style: none;
+}
+.item {
+  display: flex;
+  align-items: center;
+}
+.checkbox {
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  position: absolute;
+}
+.checkboxSpan {
+  width: 25px;
+  height: 25px;
+  box-shadow: 0px 0px 5px 0px rgb(0, 0, 0) inset;
+  display: inline-block;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.checkbox:checked + .checkboxSpan span {
+  width: 15px;
+  height: 15px;
+  box-shadow: 0px 0px 5px 0px rgb(0, 0, 0) inset;
+  background-color: #690e6d;
+}
+.btnItem {
+  padding: 4px 7px;
+  font-size: 20px;
+  line-height: 17px;
+}
+.btn.active {
+  background-color: greenyellow;
+  animation: bgc 1s linear infinite alternate-reverse;
+  position: relative;
+}
+.block {
+  width: 100%;
+text-align: center;
+}
+
+@keyframes bgc {
+  0% {
+    background-color: red;
+  }
+  50% {
+    background-color: yellow;
+  }
+  100% {
+    background-color: green;
+  }
+}
